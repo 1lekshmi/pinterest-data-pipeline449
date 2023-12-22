@@ -6,6 +6,7 @@
   - [Configuring EC2 Kafka Client](#configuring-ec2-kafka-client)
   - [Connecting a MSK cluster to a S3 bucket](#connecting-a-msk-cluster-to-a-s3-bucket)
   - [Configuring an API in API Gateway](#configuring-an-api-in-api-gateway)
+  - [Databricks & Spark on Databricks](#databricks--spark-on-databricks)
 
 ## Data
 
