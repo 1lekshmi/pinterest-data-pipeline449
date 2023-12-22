@@ -63,3 +63,11 @@ To send the data to the S3 bucket, I modified the `user_posting_emulation.py` fi
 The data from each table is uploaded to the corresponding folder as a JSON file
 
 ![](images/jsonfiles.png)
+
+### Databricks & Spark on Databricks
+
+To batch process data on databricks, I had to mount the S3 bucket on the platform. To do this, the file [mount_s3_to_db](databricks/mount_s3_to_db.ipynb) is run on the platform.
+
+In this notebook, you import the necessary libraries, obtain the AWS credentials needed to mount the S3 bucket. Once the bucket is mounted, three different dataframes are created, one for each topic.
+
+The dataframes created are then cleaned and used for computations in the file [clean_data](databricks/clean_data.ipynb)
