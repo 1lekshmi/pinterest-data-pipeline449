@@ -2,11 +2,13 @@
 
 ## Table of Contents
 
-- [Batch Processing](#batch-processing)
+- [Data](#data)
+- [Set Up](#set-up)
   - [Configuring EC2 Kafka Client](#configuring-ec2-kafka-client)
   - [Connecting a MSK cluster to a S3 bucket](#connecting-a-msk-cluster-to-a-s3-bucket)
   - [Configuring an API in API Gateway](#configuring-an-api-in-api-gateway)
   - [Databricks & Spark on Databricks](#databricks--spark-on-databricks)
+  - [AWS MWAA](#aws-mwaa)
 
 ## Data
 
@@ -30,7 +32,7 @@ user_data:
 
 `{'ind': 7528, 'first_name': 'Abigail', 'last_name': 'Ali', 'age': 20, 'date_joined': datetime.datetime(2015, 10, 24, 11, 23, 51)}`
 
-## Batch Processing
+## Set Up
 
 ### Configuring EC2 Kafka Client
 
@@ -72,3 +74,7 @@ To batch process data on databricks, I had to mount the S3 bucket on the platfor
 In this notebook, you import the necessary libraries, obtain the AWS credentials needed to mount the S3 bucket. Once the bucket is mounted, three different dataframes are created, one for each topic.
 
 The dataframes created are then cleaned and used for computations in the file [clean_data](databricks/clean_data.ipynb)
+
+### AWS MWAA
+
+MWAA was used in this project to automate the process of running the batch processing on Databricks. A DAG [0a9b5b8a2ae5_dag](0a9b5b8a2ae5_dag.py) was created to run the notebook daily. This was then uploaded to the MWAA S3 bucket
