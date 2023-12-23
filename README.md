@@ -3,6 +3,7 @@
 ## Table of Contents
 
 - [Data](#data)
+- [Tools Used](#tools-used)
 - [Set Up](#set-up)
   - [Configuring EC2 Kafka Client](#configuring-ec2-kafka-client)
   - [Connecting a MSK cluster to a S3 bucket](#connecting-a-msk-cluster-to-a-s3-bucket)
@@ -31,6 +32,17 @@ geolocation_data:
 user_data:
 
 `{'ind': 7528, 'first_name': 'Abigail', 'last_name': 'Ali', 'age': 20, 'date_joined': datetime.datetime(2015, 10, 24, 11, 23, 51)}`
+
+## Tools Used
+
+- Apache Kafka
+- AWS MSK
+- AWS MSK Connect
+- Kafka REST Proxy
+- AWS API Gateway
+- Databricks
+- Apache Spark
+- MWAA (Managed Workflow for Apache Airflow)
 
 ## Set Up
 
