@@ -90,3 +90,43 @@ The dataframes created are then cleaned and used for computations in the file [c
 ### AWS MWAA
 
 MWAA was used in this project to automate the process of running the batch processing on Databricks. A DAG [0a9b5b8a2ae5_dag](0a9b5b8a2ae5_dag.py) was created to run the notebook daily. This was then uploaded to the MWAA S3 bucket
+
+### AWS Kinesis
+
+The first step to processing the streaming data was to create three different streams on AWS Kinesis.
+
+- Stream for geo data
+  ![](images/kinesis-streaming-geo.png)
+- Stream for pinterest data
+  ![](images/kinesis-streaming-pin.png)
+- Stream for user data
+  ![](images/kinesis-streaming-user.png)
+
+Then I created new API resources on API Gateway in order to
+interact with the Kinesis stream
+![](images/api_resources.png)
+
+The API was then redeployed and the invoke URL was once again used in the [user_posting_emulation_streaming](user_posting_emulation_streaming.py) file to retrieve data from the RDS database and send it to the Kinesis stream via the new API.
+
+- pin kinesis stream
+  ![](images/kinesis-streaming-pin.png)
+
+- geo kinesis stream
+  ![](images/kinesis-streaming-geo.png)
+
+- user kinesis stream
+  ![](images/kinesis-streaming-user.png)
+
+The notebook [kinesis_streaming_data](databricks/kinesis_streaming_data.ipynb) contains the code to reading the data from the Kinesis streams, cleaning the data and then writing the data into Delta tables on Databricks.
+
+- Pinterest data schema and table
+  ![](images/pin_table_schema.png)
+  ![](images/pin_table_sample_data.png)
+
+- Geo data schema and table
+  ![](images/geo_table_schema.png)
+  ![](images/geo_table_sample_data.png)
+
+- User data schema and table
+  ![](images/user_table_schema.png)
+  ![](images/user_table_sample_data.png)
