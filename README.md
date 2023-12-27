@@ -4,6 +4,7 @@
 
 - [Data](#data)
 - [Tools Used](#tools-used)
+- [Architecture Overview](#architecture-overview)
 - [Set Up](#set-up)
   - [Configuring EC2 Kafka Client](#configuring-ec2-kafka-client)
   - [Connecting a MSK cluster to a S3 bucket](#connecting-a-msk-cluster-to-a-s3-bucket)
@@ -46,6 +47,10 @@ user_data:
 - MWAA (Managed Workflow for Apache Airflow)
 - AWS Kinesis
 - PySpark
+
+## Architecture Overview
+
+![](images/CloudPinterestPipelineArchitecture.png)
 
 ## Set Up
 
