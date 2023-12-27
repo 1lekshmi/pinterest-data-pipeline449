@@ -10,6 +10,7 @@
   - [Configuring an API in API Gateway](#configuring-an-api-in-api-gateway)
   - [Databricks & Spark on Databricks](#databricks--spark-on-databricks)
   - [AWS MWAA](#aws-mwaa)
+  - [AWS Kinesis](#aws-kinesis)
 
 ## Data
 
@@ -43,6 +44,8 @@ user_data:
 - Databricks
 - Apache Spark
 - MWAA (Managed Workflow for Apache Airflow)
+- AWS Kinesis
+- PySpark
 
 ## Set Up
 
