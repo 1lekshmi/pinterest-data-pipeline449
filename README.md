@@ -112,13 +112,13 @@ interact with the Kinesis stream
 The API was then redeployed and the invoke URL was once again used in the [user_posting_emulation_streaming](user_posting_emulation_streaming.py) file to retrieve data from the RDS database and send it to the Kinesis stream via the new API.
 
 - pin kinesis stream
-  ![](images/kinesis-streaming-pin.png)
+  ![](images/pin_kinesis_stream_data.png)
 
 - geo kinesis stream
-  ![](images/kinesis-streaming-geo.png)
+  ![](images/geo_kinesis_stream_data.png)
 
 - user kinesis stream
-  ![](images/kinesis-streaming-user.png)
+  ![](images/user_kinesis_stream_data.png)
 
 The notebook [kinesis_streaming_data](databricks/kinesis_streaming_data.ipynb) contains the code to reading the data from the Kinesis streams, cleaning the data and then writing the data into Delta tables on Databricks.
 
